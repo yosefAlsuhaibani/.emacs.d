@@ -1,1 +1,2 @@
-* SOLO Emacs Config!
+* Emacs Config
+  Right now I have no idea what I am doing; pretty much hacking things as I go along.
