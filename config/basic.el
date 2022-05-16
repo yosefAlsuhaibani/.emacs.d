@@ -1,3 +1,9 @@
+;; This file includes basic settings
+;; and package manager set-up, right
+;; now I am trying to use straight-use-package
+;; as my package manager for everything.
+
+
 
 ;; Send all fucky backup files to "backup" dir.
 ;; + inspo for settings:
@@ -23,7 +29,6 @@
 (setq show-paren-delay 0)
 (show-paren-mode t)
 
-;; normal copy paste to clipboard
 
 ;; UTF-8 everywhere!
 (set-terminal-coding-system  'utf-8)
@@ -38,6 +43,9 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq require-final-newline t)
 
+
+(unless (package-installed-p 'use-package)
+   (package-install 'use-package))
 
 ;; Bootstrap code for straight
 (defvar bootstrap-version)
@@ -60,3 +68,23 @@
 (setq package-archives '(("org"       . "http://orgmode.org/elpa/")
                          ("gnu"       . "http://elpa.gnu.org/packages/")
                          ("melpa"     . "http://melpa.org/packages/")))
+
+(require 'use-package)
+(use-package quelpa)
+(use-package quelpa-use-package)
+;; Actually get “package” to work.
+
+(setq use-package-always-ensure t)
+
+;; Pakage update stuff!
+(use-package auto-package-update
+  :defer 10
+  :config
+  ;; Delete residual old versions
+  (setq auto-package-update-delete-old-versions t)
+  ;; Do not bother me when updates have taken place.
+  (setq auto-package-update-hide-results t)
+  ;; Update installed packages at startup if there is an update pending.
+  (auto-package-update-maybe))
+
+;; DONE!
