@@ -8,59 +8,20 @@
 (load "~/.emacs.d/config/basic.el")
 
 
-;; Packages from here onwards!
-
-
 ;; Navigation + interacting with Emacs
 ;; frames and buffers.
 ;; So things like selectrum, ace-window,
 ;; undo-tree can be found here
 (load "~/.emacs.d/config/mov.el")
 
+;; Org-mode + LaTeX stuff; things to
+;; produce written things!
+(load "~/.emacs.d/config/prose.el")
+
+
 ;; Weird auto-set vars get sent here!
 (setq custom-file "~/.emacs.d/config/custom.el")
 (load custom-file)
-
-
-
-;; As of 2021 August 29, I do not have the energy in me
-;; to learn org mode. I really want to! and probably will
-;; in the upcoming year.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ORG MODE + LaTeX STUFF   ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package org
-  :config
-  (unless (functionp 'org-link-make-string)
-    (fset 'org-link-make-string 'org-make-link-string))
-  )
-
-(setq org-modules '(org-habit
-                    org-mouse
-                    org-protocol
-                    org-annotate-file
-                    org-eval
-                    org-expiry
-                    org-interactive-query
-                    org-collector
-                    org-panel
-                    org-screen
-                    org-toc))
-(eval-after-load 'org
-  '(org-load-modules-maybe t))
-;; Prepare stuff for org-export-backends
-(setq org-export-backends '(org latex icalendar html ascii))
-
-;;Yanked from orgmode.org
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-
-
-
-;; LaTeX
-(straight-use-package 'auctex)
-
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;
