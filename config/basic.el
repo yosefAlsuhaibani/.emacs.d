@@ -43,6 +43,9 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq require-final-newline t)
 
+(require 'use-package)
+(package-initialize)
+(package-refresh-contents)
 
 (unless (package-installed-p 'use-package)
    (package-install 'use-package))

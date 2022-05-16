@@ -9,8 +9,7 @@
 
 
 ;; Packages from here onwards!
-(package-initialize)
-(package-refresh-contents)
+
 
 ;; Navigation + interacting with Emacs
 ;; frames and buffers.
