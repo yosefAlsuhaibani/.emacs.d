@@ -43,12 +43,8 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq require-final-newline t)
 
-(require 'use-package)
-(package-initialize)
-(package-refresh-contents)
 
-(unless (package-installed-p 'use-package)
-   (package-install 'use-package))
+
 
 ;; Bootstrap code for straight
 (defvar bootstrap-version)
@@ -72,7 +68,10 @@
                          ("gnu"       . "http://elpa.gnu.org/packages/")
                          ("melpa"     . "http://melpa.org/packages/")))
 
+
 (require 'use-package)
+(package-initialize)
+(package-refresh-contents)
 (use-package quelpa)
 (use-package quelpa-use-package)
 ;; Actually get “package” to work.

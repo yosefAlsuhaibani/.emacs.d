@@ -7,7 +7,6 @@
 ;; are configred in this file!
 (load "~/.emacs.d/config/basic.el")
 
-
 ;; Navigation + interacting with Emacs
 ;; frames and buffers.
 ;; So things like selectrum, ace-window,

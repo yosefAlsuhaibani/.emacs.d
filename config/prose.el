@@ -1,6 +1,22 @@
+;; There's a lot to be done here LMAO
+;; Currently not touching ORG; need to
+;; pick it up someday...
 
 ;; LaTeX
 (straight-use-package 'auctex)
+(straight-use-package 'cdlatex)
+
+;; some config settings we're yanked from
+;; https://www.vanormondt.net/~peter/blog
+(setq TeX-PDF-mode t)
+(setq-default TeX-master)
+(add-hook `TeX-mode-hook (lambda ()
+                           (TeX-fold-mode 1)))
+
+;; Spellchecking in LaTeX!
+(add-hook `LaTeX-mode-hook `flyspell-mode)
+(add-hook `TeX-mode-hook `flyspell-mode)
+(add-hook `bibtex-mode-hook `flyspell-mode)
 
 
 ;;Org
