@@ -26,7 +26,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;
 ;; LANG MODES STUFF ;;
 ;;;;;;;;;;;;;;;;;;;;;;
-(use-package sml-mode)
+(straight-use-package 'sml-mode)
 
 ;; As of 01/09/2021,I am an emacs novice, most of the customizations
 ;; below are yanked from here
@@ -43,7 +43,8 @@
 (add-hook 'sml-mode-hook 'turn-on-font-lock)
 (add-hook 'sml-load-hook '(lambda () (require 'sml-font)))
 
-(setq exec-path (cons "/usr/local/SML/bin" exec-path))
+;; Broken TODO: fix lmao
+(setq exec-path (cons "/usr/local/smlnj/bin/sml" exec-path))
 (setq sml-program-name "smlnj")
 
 ;; my favorite sml style
