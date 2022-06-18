@@ -1,27 +1,16 @@
 ;; NOTE: a lot of this config was yanked from other people's configs!
 
 
-
-
 ;; Things like menu bar/package manager set-up
 ;; are configred in this file!
 ;; Navigation + interacting with Emacs
 ;; frames and buffers.
 ;; So things like selectrum, ace-window,
 ;; undo-tree can be found here
-(add-to-list 'load-path "~/.emacs.d/config/life")
-
+(load-file "~/.emacs.d/config/life/sig.el")
 
 ;; programming/markup things
-(add-to-list 'load-path "~/.emacs.d/config/prog")
-
-
-;; lsp-mode
-;; (straight-use-package 'lsp-mode)
-
-;; C stuff
-;;(load "~")
-
+(load-file "~/.emacs.d/config/prog/sig.el")
 
 
 ;; OCaml stuff ... is automaticly added by ocamlsetup
@@ -36,12 +25,11 @@
 (load-theme 'infodoc t t)
 (enable-theme 'infodoc)
 
-;;(Set-face-attribute 'default nil
-;;                    :family "Fira Code"
-;;                    :height 120
-;;                    )
+(set-face-attribute 'default nil
+                    :family "Iosevka SS09"
+                    :height 130
+                  )
 
-(set-face-font 'default "Fira Code")
 
 
 ;; Weird auto-set vars get sent here!
