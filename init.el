@@ -5,22 +5,22 @@
 
 ;; Things like menu bar/package manager set-up
 ;; are configred in this file!
-(load "~/.emacs.d/config/basic.el")
-
 ;; Navigation + interacting with Emacs
 ;; frames and buffers.
 ;; So things like selectrum, ace-window,
 ;; undo-tree can be found here
-(load "~/.emacs.d/config/mov.el")
-
-;; Org-mode + LaTeX stuff; things to
-;; produce written things!
-(load "~/.emacs.d/config/prose.el")
+(add-to-list 'load-path "/config/life")
 
 
-;; Weird auto-set vars get sent here!
-(setq custom-file "~/.emacs.d/config/custom.el")
-(load custom-file)
+;; programming/markup things
+(add-to-list 'load-path "/config/prog")
+
+
+;; lsp-mode
+;;(straight-use-package 'lsp-mode)
+
+;; C stuff
+;;(load "~")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;
@@ -81,6 +81,11 @@
                     )
 
 (set-face-font 'default "Fira Code")
+
+
+;; Weird auto-set vars get sent here!
+(setq custom-file "~/.emacs.d/config/custom.el")
+(load custom-file)
 
 ;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
 (require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
