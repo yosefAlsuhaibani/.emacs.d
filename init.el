@@ -9,60 +9,19 @@
 ;; frames and buffers.
 ;; So things like selectrum, ace-window,
 ;; undo-tree can be found here
-(add-to-list 'load-path "/config/life")
+(add-to-list 'load-path "~/.emacs.d/config/life")
 
 
 ;; programming/markup things
-(add-to-list 'load-path "/config/prog")
+(add-to-list 'load-path "~/.emacs.d/config/prog")
 
 
 ;; lsp-mode
-;;(straight-use-package 'lsp-mode)
+;; (straight-use-package 'lsp-mode)
 
 ;; C stuff
 ;;(load "~")
 
-
-;;;;;;;;;;;;;;;;;;;;;;
-;; LANG MODES STUFF ;;
-;;;;;;;;;;;;;;;;;;;;;;
-(straight-use-package 'sml-mode)
-
-;; As of 01/09/2021,I am an emacs novice, most of the customizations
-;; below are yanked from here
-;; https://www.cs.princeton.edu/courses/archive/fall04/cos441/web/resources/.emacs
-
-;; Sml stuff
-(autoload 'sml-mode "sml-mode" "Major mode for editing SML." t)
-(setq auto-mode-alist
-      (append '(("\\.sml$" . sml-mode)
-                ("\\.sig$" . sml-mode)
-                ("\\.fun$" . sml-mode))
-	        auto-mode-alist))
-
-(add-hook 'sml-mode-hook 'turn-on-font-lock)
-(add-hook 'sml-load-hook '(lambda () (require 'sml-font)))
-
-;; Broken TODO: fix lmao
-(setq exec-path (cons "/usr/local/smlnj/bin/sml" exec-path))
-(setq sml-program-name "smlnj")
-
-;; my favorite sml style
-(setq sml-indent-level       2)
-(setq sml-pipe-indent        -2)
-(setq sml-case-indent        t)
-(setq sml-nested-if-indent   t)
-(setq sml-type-of-indent     nil)
-(setq sml-electric-semi-mode nil)
-
-
-;; Lean stuff
-(straight-use-package 'lean-mode)
-(straight-use-package 'unicode-fonts)
-(unicode-fonts-setup)
-
-
-;; Agda things
 
 
 ;; OCaml stuff ... is automaticly added by ocamlsetup
@@ -71,14 +30,16 @@
 ;; Theme ;;
 ;;;;;;;;;;;
 
-;; https://github.com/alezost/alect-themes
-(require 'color-theme-sanityinc-tomorrow)
-(load-theme 'sanityinc-tomorrow-bright t)
+(add-to-list 'custom-theme-load-path
+             (file-name-as-directory "~/.emacs.d/themes/"))
 
-(set-face-attribute 'default nil
-                    :family "Fira Code"
-                    :height 120
-                    )
+(load-theme 'infodoc t t)
+(enable-theme 'infodoc)
+
+;;(Set-face-attribute 'default nil
+;;                    :family "Fira Code"
+;;                    :height 120
+;;                    )
 
 (set-face-font 'default "Fira Code")
 
