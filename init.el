@@ -21,14 +21,16 @@
 
 (add-to-list 'custom-theme-load-path
              (file-name-as-directory "~/.emacs.d/themes/"))
+(add-to-list 'custom-theme-load-path
+             (file-name-as-directory "~/.emacs.d/moe-emacs.d/"))
+(add-to-list 'load-path "~/.emacs.d/moe-theme.el/")
+(require 'moe-theme)
 
-(load-theme 'infodoc t t)
-(enable-theme 'infodoc)
+(load-theme 'moe-dark t)
 
 (set-face-attribute 'default nil
                     :family "Iosevka SS09"
-                    :height 130
-                  )
+                    :height 130)
 
 
 
