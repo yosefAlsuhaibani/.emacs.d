@@ -26,7 +26,7 @@
 (add-to-list 'load-path "~/.emacs.d/moe-theme.el/")
 (require 'moe-theme)
 
-(load-theme 'moe-dark t)
+(load-theme 'moe-light t)
 
 (set-face-attribute 'default nil
                     :family "Iosevka SS09"
