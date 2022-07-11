@@ -1,2 +1,5 @@
 * Emacs Config
-  Right now I have no idea what I am doing; pretty much hacking things as I go along.
+  Right now I kinda have an idea of what I am doing; hacking things as I go along.
+
+** Why Emacs?
+   I liked the logo a while back and tried to learn it, and right now it is just sunk cost (plus its kinda cool)
