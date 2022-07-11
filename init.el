@@ -24,9 +24,23 @@
 (add-to-list 'custom-theme-load-path
              (file-name-as-directory "~/.emacs.d/moe-emacs.d/"))
 (add-to-list 'load-path "~/.emacs.d/moe-theme.el/")
-(require 'moe-theme)
 
-(load-theme 'moe-light t)
+
+;; Cosmetics
+(straight-use-package `powerline)
+(powerline-default-theme)
+
+(require 'moe-theme)
+(load-theme 'moe-dark t)
+(setq moe-theme-highlight-buffer-id t)
+(setq moe-theme-mode-line-color 'purple)
+
+
+
+
+;; paren highlighting w/moe-theme
+(show-paren-mode t)
+(setq show-paren-style 'expression)
 
 (set-face-attribute 'default nil
                     :family "Iosevka SS09"
